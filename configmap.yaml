@@ -1,0 +1,10 @@
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: rbac-policy
+data:
+  rbac-policy.csv: |
+    g, user:default/pataknight, role:default/basic-catalog
+
+    p, role:default/basic-catalog, catalog-entity, read, allow
+    p, role:default/basic-catalog, catalog.entity.create, create, allow

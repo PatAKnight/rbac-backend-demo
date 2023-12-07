@@ -1,0 +1,4 @@
+g, user:default/pataknight, role:default/basic-catalog
+
+p, role:default/basic-catalog, catalog-entity, read, allow
+p, role:default/basic-catalog, catalog.entity.create, create, allow
