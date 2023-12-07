@@ -5,6 +5,7 @@ Houses some of the resources that were used during the Janus IDP RBAC Backend Pl
 ## Links to documentation for the Janus IDP RBAC Backend Plugin
 
 - [Backstage Permission Framework](https://backstage.io/docs/permissions/overview)
+- [Casbin](https://casbin.org/docs/overview)
 - [README](https://github.com/janus-idp/backstage-plugins/blob/main/plugins/rbac-backend/README.md)
 - [API](https://github.com/PatAKnight/backstage-plugins/blob/rbac-backend-documentation/plugins/rbac-backend/docs/apis.md)
 - [Known permissions](https://github.com/PatAKnight/backstage-plugins/blob/rbac-backend-documentation/plugins/rbac-backend/docs/permissions.md)

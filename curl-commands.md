@@ -11,7 +11,7 @@ export token='...token...'
 Create a role in the RBAC Backend plugin, this is assuming that your Backstage instance is running locally with the `backend.baseUrl` set to <http://localhost:7007>.
 
 ```bash
-curl -X POST "http://localhost:7007/api/permission/roles" -d '{ "roleMemberReferences":  [ "user:default/pataknight" ], "roleName": "role:default/curl-test" }' -H "Content-Type: application/json" -H "Authorization: Bearer $token" -v
+curl -X POST "http://localhost:7007/api/permission/roles" -d '{ "memberReferences":  [ "user:default/pataknight" ], "name": "role:default/curl-test" }' -H "Content-Type: application/json" -H "Authorization: Bearer $token" -v
 ```
 
 Assign a permission to a role

@@ -1,35 +1,36 @@
-appConfig:
+backend:
   auth:
-    environment: development
-    providers:
-      github:
-        development:
-          clientId: ${GITHUB_APP_CLIENT_ID}
-          clientSecret: ${GITHUB_APP_CLIENT_SECRET}
+    keys:
+      - secret: ${BACKEND_SECRET}
 
-  catalog:
-    import:
-      entityFilename: catalog-info.yaml
-      pullRequestBranchName: backstage-integration
-    rules:
-      - allow:
-          [Component, System, Group, Resource, Location, Template, API, User]
-    locations:
-      - type: url
-        target: https://github.com/janus-idp/backstage-showcase/blob/main/catalog-entities/all.yaml
+auth:
+  environment: development
+  providers:
+    github:
+      development:
+        clientId: ${GITHUB_APP_CLIENT_ID}
+        clientSecret: ${GITHUB_APP_CLIENT_SECRET}
 
-      - type: url
-        target: https://github.com/janus-idp/software-templates/blob/main/showcase-templates.yaml
+catalog:
+  import:
+    entityFilename: catalog-info.yaml
+    pullRequestBranchName: backstage-integration
+  rules:
+    - allow: [Component, System, Group, Resource, Location, Template, API, User]
+  locations:
+    - type: url
+      target: https://github.com/janus-idp/backstage-showcase/blob/main/catalog-entities/all.yaml
 
-      - type: url
-        target: ${URL_FOR_MY_USER}
+    - type: url
+      target: https://github.com/janus-idp/software-templates/blob/main/showcase-templates.yaml
 
-  permission:
-    enabled: true
-    rbac:
-      database:
-        enabled: false
-      policies-csv-file: ./rbac/rbac-policy.csv
-      admin:
-        users:
-          - name: ${PERMISSION_ADMIN}
+    - type: url
+      target: ${URL_FOR_MY_USER}
+
+permission:
+  enabled: true
+  rbac:
+    policies-csv-file: ../../rbac-policy.csv
+    admin:
+      users:
+        - name: ${PERMISSION_ADMIN}
